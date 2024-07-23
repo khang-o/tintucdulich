@@ -1,0 +1,30 @@
+<table class="table table-bordered">
+   <h1 class="text-center">Đơn hàng của bạn</h1>
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Họ tên</th>
+            <th>Số điện thoại</th>
+            <th>Địa chỉ</th>
+            <th>Sản phẩm</th>
+            <th>Ngày đặt</th>
+            <th>Tổng tiền</th>
+            <th>Trạng thái</th>
+        </tr>
+        <tr ng-repeat="dh in dsDH">
+            <td>{{$index+1}}</td>
+            <td>{{dh.name}}</td>
+            <td>{{dh.phone}}</td>
+            <td>{{dh.address}}</td>
+            <td ><div ng-repeat="sp in dh.products">{{sp.name}} x {{sp.quantity}}:  Giá {{sp.quantity*sp.price|number:0}}đ</div></td>
+            <td>{{dh.date}}</td>
+            <td>{{dh.total|number:0}}đ</td>
+            <td>{{dh.status}}</td>
+
+            
+        </tr>
+    </thead>
+  </table>
+  <div class="text-end"><button  class="btn btn-outline-success w-25 m-4" >Thanh toán</button></div>
+  
+ 

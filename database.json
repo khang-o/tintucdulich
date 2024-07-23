@@ -1,0 +1,205 @@
+{
+  "chitiet": [
+    {
+      "id": "1",
+      "title": "Cu Chi Tunnels Luxury Tour - Morning or Afternoon",
+      "content": "Hear stories of the American-Vietnam war as you discover the maze-like Cu Chi Tunnels, a 136-mile (220 kilometers). ",
+      "date": "2024-03-26",
+      "author": "Phat tai",
+      "image": "cuchi.jpg",
+      "views": 29,
+      "star": 0,
+      "rating": 0,
+      "like": 1,
+      "haha": 1,
+      "dislike": 1
+    },
+    {
+      "id": "2",
+      "title": "Ha Long Bay Tickets and Tours",
+      "content": "A UNESCO World Heritage Site located in the Gulf of Tonkin, Ha Long Bay is renowned for its spectacular scenery. One of the most popular tourist attractions in northern",
+      "date": "2024-08-11",
+      "author": "Khang le",
+      "image": "halong.jpg",
+      "views": 15,
+      "star": 0,
+      "rating": 0,
+      "like": 4,
+      "haha": 2,
+      "dislike": 1
+    },
+    {
+      "id": "3",
+      "title": "Hoi An Ancient Town",
+      "content": "Renowned throughout Southeast Asia for its antique charm, the UNESCO World Heritage Site of Hoi An Ancient Town is a must-see for first-time visitors to Vietnam",
+      "date": "2024-01-12",
+      "author": "Thu cuoi",
+      "image": "hoian.jpg",
+      "views": 2,
+      "star": 0,
+      "rating": 0,
+      "like": 1,
+      "haha": 1,
+      "dislike": 1
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Móc khóa",
+      "image": "moc-khoa.jpg",
+      "price": 50000
+    },
+    {
+      "id": "2",
+      "name": "Thạch nhủ",
+      "image": "thach-nhu.jpg",
+      "price": 500000
+    },
+    {
+      "id": "3",
+      "name": "Nón lá",
+      "image": "non-la.jpg",
+      "price": 30000
+    },
+    {
+      "id": "4",
+      "name": "Bánh mì",
+      "image": "Bánh mì brioche.jpg",
+      "price": 150000
+    },
+    {
+      "id": "5",
+      "name": "Bánh Mousse",
+      "image": "mousse.jpg",
+      "price": 45000
+    },
+    {
+      "id": "6",
+      "name": "Bánh tiramisu",
+      "image": "tiramisu.jpg",
+      "price": 37000
+    },
+    {
+      "id": "7",
+      "name": "Bánh cookie",
+      "image": "cookies.jpg",
+      "price": 30000
+    },
+    {
+      "id": "8",
+      "name": "Bánh chưng",
+      "image": "banhchung.jpg",
+      "price": 55000
+    },
+    {
+      "id": "4da2",
+      "name": "dsdfsf",
+      "price": 123
+    },
+    {
+      "id": "0fc7",
+      "name": "cuong",
+      "price": 123
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "idChitiet": "1",
+      "content": "Địa đạo to nhưng lối vào thì nhỏ",
+      "idUser": "1",
+      "date": "2024-04-22 10:58:00"
+    },
+    {
+      "id": "19f2",
+      "idChitiet": "1",
+      "idUser": "1",
+      "name": "Lê Minh Khang",
+      "content": "khang",
+      "date": "2024-04-04 09:42:44"
+    },
+    {
+      "id": "5c6c",
+      "idChitiet": "2",
+      "idUser": "1",
+      "name": "Lê Minh Khang",
+      "content": "ok",
+      "date": "2024-04-04 16:06:20"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Lê Minh Khang",
+      "email": "khang@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "3105",
+      "name": "dat 09",
+      "email": "medium@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "6985",
+      "name": "truong",
+      "email": "truong@gmail.com",
+      "password": "123"
+    }
+  ],
+  "orders": [
+    {
+      "id": "14f5",
+      "name": "đfdxgd",
+      "idUser": "-1",
+      "phone": 7978345,
+      "address": "ạkdsad",
+      "products": [
+        {
+          "id": "3",
+          "name": "Nón lá",
+          "image": "non-la.jpg",
+          "price": 30000,
+          "quantity": 2
+        },
+        {
+          "id": "4",
+          "name": "Bánh mì",
+          "image": "Bánh mì brioche.jpg",
+          "price": 150000,
+          "quantity": 2
+        }
+      ],
+      "total": 360000,
+      "date": "2024-04-06 13:52:21",
+      "status": "order"
+    },
+    {
+      "id": "6723",
+      "name": "cuong",
+      "idUser": "-1",
+      "phone": 123780093,
+      "address": "quang trung",
+      "products": [
+        {
+          "id": "3",
+          "name": "Nón lá",
+          "image": "non-la.jpg",
+          "price": 30000,
+          "quantity": 4
+        },
+        {
+          "id": "4",
+          "name": "Bánh mì",
+          "image": "Bánh mì brioche.jpg",
+          "price": 150000,
+          "quantity": 1
+        }
+      ],
+      "total": 270000,
+      "date": "2024-04-09 13:35:18",
+      "status": "order"
+    }
+  ]
+}

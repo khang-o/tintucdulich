@@ -1,0 +1,21 @@
+<div class="container">
+    <h2 class="my-3">Thêm sản phẩm</h2>
+           
+              <form >
+                <div class="mb-3">
+                  <label for="name" class="form-label"> Nhập tên sản phẩm</label>
+                  <input type="text" class="form-control" name='name' ng-model="name">
+                </div>
+               
+                <div class="mb-3">
+                  <label for="price" class="form-label"> Nhập giá tiền</label>
+                  <input type="number" class="form-control" name='price' ng-model="price">
+                </div>
+                </div>
+                <div class="mb-3">
+                  <label for="image" class="form-label"> Chọn ảnh</label>
+                  <input type="file" class="form-control" name='image' ng-model="image" >
+                </div>
+                <button ng-click="addsp()" type="submit" class="btn btn-primary">Thêm sản phẩm</button>
+              </form>
+    </div> 

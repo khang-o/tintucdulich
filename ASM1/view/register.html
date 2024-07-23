@@ -1,0 +1,42 @@
+
+<div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="text-center">
+          <img src="../public/img/KhangLM.png" alt="" >
+        </div>
+
+        <form ng-submit="register()">
+            <div class="mb-3">
+                <label for="name" class="form-label">Họ tên</label>
+                <input type="text" class="form-control" id="name" ng-model="name" required>
+              
+              </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" ng-model="email" required>
+            
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Mật khẩu</label>
+              <input type="password" class="form-control" id="password" ng-model="password">
+            </div>
+            <div class="mb-3">
+                <label for="repassword" class="form-label">Nhập lại mật khẩu</label>
+                <input type="password" class="form-control" id="repassword" ng-model="repassword">
+              </div>
+              <button type="submit" class="btn btn-info mb-4">Đăng ký</button>
+
+            <div ng-show="isError" class="alert alert-danger mt-4">
+                Đăng ký thất bại 
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-5">
+          <div class="">
+            <img src="../public/img/bg.jpg" style="border-radius:20px ;">
+          </div>
+
+        </div>
+    </div>
+</div>

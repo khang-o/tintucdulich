@@ -1,0 +1,169 @@
+
+<div class="card text-bg-dark border-0 rounded-0">
+    <img src="public/img/thumbnail-travelhub.jpg" 
+    class="card-img object-fit-cover rounded-0" style="max-height: 300px;">
+    <div class="card-img-overlay d-flex justify-content-center align-items-center bg-dark bg-opacity-25">
+      <div class="text-center">
+        <p class="card-text fs-3">Chào mừng đến với</p>
+        <h1 class="card-title display-3 fw-bolder">Việt nam</h1>
+      </div>
+    </div>
+</div>
+<div class=" bg-body-secondary">
+  <div class="container py-4">
+    <h3 class="mb-3">Điểm đến ấn tượng</h3>
+    <div class="row">
+      <div ng-repeat="tt in dsTT" class="col-md-4">
+        <div class="card shadow border-0 hover-trigger">
+          <div class="position-relative">
+            <div class="badge-top">
+              #{{$index+1}}
+            </div>
+            <img src="public/img/{{tt.image}}" class="card-img-top" alt="...">
+            <a href="#!chitiet/{{tt.id}}" class="show-hover btn btn-light rounded-pill 
+            position-absolute end-0 bottom-0 mb-3 me-3"> 
+            <i class="fa-regular fa-eye"></i>
+             Chi tiết</a>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{tt.title}}</h5>
+            <div class="text-warning mb-3 mt-4 d-flex align-items-center">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              <span class="text-dark ms-2">{{tt.views}}</span>
+            </div>
+            <p class="card-text">{{tt.content}}</p>
+            <a href="" data-bs-toggle="modal" data-bs-target="#moreModal" ng-click="showTinTuc(tt)">Xem thêm</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class=" bg-light">
+  <div class="container py-4">
+   
+    <h3 class="mb-3">Quà lưu niệm</h3>
+    <div class="row">
+      <div ng-repeat="sp in dsSP| limitTo:limit:begin" class="col-lg-2 mb-4">
+        <div class="card shadow-sm">
+         <a href="#!detail/{{sp.id}}"><img src="public/img/{{sp.image}}" class="card-img-top" style="height: 200px;"></a> 
+          <div class="card-body text-center">
+            <h5 class="card-title">{{sp.name}}</h5>
+            <p class="card-text"></p>
+            <p class="card-text"><strong>Giá:</strong> {{sp.price |number:0}}đ</p>
+          <button ng-click="addToCart(sp)" class="button-27" role="button">Mua</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item">
+          <button ng-click="chuyenTrang(page-1)" class="page-link {{(page==1)?'disabled':''}}" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span></button></li>
+        <li  ng-repeat ="trang in pageList()" class="page-item">
+          <button ng-click="chuyenTrang(trang)" class="page-link {{(page==trang)?'active':''}}" href="#">{{trang}}</button></li>
+        <li class="page-item">
+          <button ng-click="chuyenTrang(page+1)"  class="page-link {{(page==totalPage())?'disabled':''}}" aria-label="Next">
+            
+            <span aria-hidden="true">&raquo;</span></button></li>
+      </ul>
+    </nav>
+  </div>
+  
+</div>
+<hr class="my-4">
+
+<div class="container">
+  <h2 class="mt-4 mb-5 text-center"><strong>Địa điểm nổi tiếng</strong></h2>
+  <div class="row">
+    
+    <div class="col-sm-8">
+      <div class="card text-bg-dark border-0 rounded-0">
+        <img src="../public/img/songsaigon.jpg" 
+        class="card-img object-fit-cover rounded-0">
+        <div class="card-img-overlay d-flex justify-content-center align-items-center bg-dark bg-opacity-25">
+          <div class="text-center">
+            <p class="card-text fs-3">Saigon River</p>
+            <h1 class="card-title display-3 fw-bolder"> Sông Sài Gòn</h1>
+          </div>
+        </div>
+    </div>
+    
+    </div>
+    <div class="col-sm-4">
+      <div class="card text-bg-dark border-0 rounded-0">
+        <img src="../public/img/sgopera.jpg">
+        <div class="card-img-overlay d-flex justify-content-center align-items-start bg-dark bg-opacity-25">
+          <div class="text-center">
+            <p class="card-text fs-3">Opéra de Saïgon</p>
+            <h1 class="card-title fw-bolder">Saigon Opera House</h1>
+          </div>
+        </div>
+    </div>
+    <div class="card text-bg-dark border-0 rounded-0 ">
+      <img src="../public/img/war.jpg" 
+      class="card-img object-fit-cover rounded-0">
+      <div class="card-img-overlay d-flex justify-content-center align-items-start bg-dark bg-opacity-25">
+        <div class="text-center">
+          <p class="card-text fs-3">War Remnants Museum</p>
+          <h1 class="card-title fw-bolder"> Bao Tang Chung Tich Chien Tranh</h1>
+        </div>
+      </div>
+  </div>
+    </div>
+    
+  </div>
+</div>
+<section style="background-color: #eee;">
+  <div class="text-center container py-5">
+    <hr class="my-4">
+
+    <h4 class="mt-4 mb-5"><strong>Mua nhiều nhất</strong></h4>
+  
+
+    <div class="row">
+      <div ng-repeat="sp in dsSP|orderBy:'price'| limitTo:3" class="col-lg-4 col-md-12 mb-4">
+        <div class="card">
+          <div class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+            data-mdb-ripple-color="light">
+            <img src="public/img/{{sp.image}} "
+              class="w-100" height="350px" />
+            <a href="#!">
+              <div class="mask">
+                <div class="d-flex justify-content-start align-items-end h-100">
+                  <h5><span class="badge bg-primary ms-2">New</span></h5>
+                </div>
+              </div>
+             
+            </a>
+          </div>
+          <div class="card-body">  
+              <h5 class="card-title mb-3">{{sp.name}}</h5>
+            <h6 class="mb-3">{{sp.price |number:0}}đ</h6>
+            <button ng-click="addToCart(sp)" class="button-27" role="button">Mua</button>
+          </div>
+        </div>
+      </div>
+    </div>   
+  </div>
+ 
+ 
+</section>
+
+<div class="modal fade" id="moreModal" tabindex="-1" aria-labelledby="moreModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content p-3">
+      <div class="modal-header border-0">
+        <h1 class="modal-title fs-3" id="moreModalLabel">{{modal.title}}</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       {{modal.content}}
+      </div>
+      <div class="modal-footer">
+        
+      </div>
+    </div>
+  </div>
+</div>

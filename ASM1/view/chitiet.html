@@ -1,0 +1,89 @@
+<div class="container py-2">
+    <div class="row">
+        <div class="col-md-9">
+            <nav aria-label="breadcrumb ">
+                <ol class="breadcrumb fs-6">
+                  <li class="breadcrumb-item">
+                    <a class="text-decoration-none text-success" href="#">Home</a></li>
+                  <li class="breadcrumb-item">
+                    <a class="text-decoration-none text-success" href="#">Blog</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Ho Chi Minh</li>
+                </ol>
+            </nav>
+            <h3>{{tintuc.title}}</h3>
+          
+            <hr width="280px" height class="border-3 opacity-100 border-success">
+            {{Date(tintuc.date)|date:'HH:mm dd-MM-yyyy'}} &bull;  By {{tintuc.author}} &bull; <i class="fa-solid fa-eye fa-sm"></i> {{tintuc.views}} <br>
+           <p> {{tintuc.content}}</p>
+            <h5 class="mt-5">Có thể bạn thích</h5>
+        <div class="row">
+            <div ng-repeat="sp in dsSP|limitTo:3" class="col-md-4">
+                <div class="card border-0 shadow" style="width: 18rem;">
+                    <img src="public/img/{{sp.image}}" class="card-img-top" height="150px">
+                    <div class="card-body ">
+                      <h5 class="card-title">{{sp.name}}</h5>
+                      <p class="card-text">{{sp.price|number:0}}đ</p>
+                      <button ng-click="addToCart(sp)" class="btn btn-primary">Mua</button>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        <h5 id="binhluan" class="mt-5">Bình luận</h5>
+        <form ng-submit="comment()" class="my-3">
+            <div class="input-group ">
+                <input type="text" class="form-control " ng-model="content">
+                <div class="input-group-text">
+                <button type="submit" class="btn btn-success">Gửi</button>
+                </div>
+            </div>
+           
+        </form>
+        <div ng-repeat="bl in dsBL" class="card mb-3 border-0" >
+            <div class="row g-0">
+              <div class="col-auto">
+                <!-- <img src="public/img/{{bl.image}}" class="img-fluid rounded-circle" width="60px" alt="..."> -->
+              </div>
+              <div class="col-10">
+                <div class="card-body pt-0">
+                  <h5 class="card-title">{{bl.name}}</h5>
+                  <p class="card-text">{{bl.content}}</p>
+                  <p class="card-text"><small class="text-body-secondary">{{Date(bl.date) |date:"HH:mm dd/MM/yyyy" }}</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    <div class="col-md-3">
+        <div class="position-sticky" style="top:90px">
+        Cảm xúc của bạn<br>
+        <button class="btn btn-outline-primary" ng-click="react('like')">
+        <i class="fa-regular fa-thumbs-up"></i> {{tintuc.like}}
+        </button>
+        <button class="btn btn-outline-warning" ng-click="react('haha')">
+            <i class="fa-solid fa-face-smile-beam"></i>{{tintuc.haha}}
+        </button>
+        <button class="btn btn-outline-danger" ng-click="react('dislike')">
+            <i class="fa-regular fa-thumbs-down"></i>{{tintuc.dislike}}
+        </button>
+        <hr>
+        Cảm nghĩ của bạn<br>
+        <button class="btn btn-outline-success">
+            <i class="fa-solid fa-share"></i>Chia sẻ
+        </button>
+        <a href="#binhluan" class="btn btn-outline-success" >
+            <i class="fa-solid fa-comment"></i>Bình luận
+        </a>
+        </div>
+    </div>
+        
+    </div>
+
+   
+       
+ 
+  
+    
+    
+
+   </div>

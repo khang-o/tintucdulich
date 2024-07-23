@@ -1,0 +1,43 @@
+<div class="container text-center">
+    <input type="text" ng-model="keyword" class="form-control mt-4" placeholder="Tìm kiếm">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1>Sắp xếp</h1>
+            <button ng-click="order='price'" class="button-49" role="button">Giá tăng dần</button>
+            <button ng-click="order='-price'" class="button-49" role="button">Giảm tăng dần</button>
+            <button ng-click="order='name'" class="button-52" role="button">Sắp xếp A-Z</button>
+            <button ng-click="order='-name'" class="button-52" role="button">Sắp xếp Z-A</button>
+          
+            
+        </div>
+    </div>
+</div>
+
+<div class="container py-4">
+    <div class="row">
+        <div class="col-md-3 mt-3" ng-repeat="sp in dsSP | search:keyword:['name','price']| orderBy:order">
+            <div class="box">
+                <div class="box-img">
+                    <img src="public/img/{{sp.image}}" width="100%" height="100px">
+                    <div class="content">
+                        <ul class="links">
+                            <li>
+                                <button ng-click="addToCart(sp)" class="button-27" role="button"> 
+                                    <i class="fa-solid fa-cart-shopping"></i>
+                                    Thêm giỏ hàng</button>
+                               
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card-body text-center">
+                    <h5 class="card-title">{{sp.name}}</h5>
+                    <p class="card-text"></p>
+                    <p class="card-text"><strong>Giá:</strong> {{sp.price |number:0}}đ</p>
+                   
+                  </div>
+               
+            </div>
+        </div>
+    </div>
+</div>
